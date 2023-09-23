@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>é ímpar ou par?</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+<body>
+    <div class="fundo">
+        <h1>É ÍMPAR OU PAR?</h1>
+
+        <div class="textinho"><label for="operacao">Escolha a operação que deseja realizar:</label></div>
+        <select id="operacao">
+            <option value="soma">SOMA</option>
+            <option value="subtracao">SUBTRAÇÃO</option>
+            <option value="multiplicacao">MULTIPLICAÇÃO</option>
+            <option value="divisao">DIVISÃO</option>
+        </select><br><br>
+
+        <button onclick="calcular()">REALIZAR CÁLCULO</button><br><br>
+    </div>
+<!-- ------------- ESSE AQUI VAI FAZER O RESULTADO DO JS APARECER SO USANDO O ID --------------------------- -->
+    <p id="resultado"></p>
+    <p id="infoNumero1"></p>
+    <p id="infoNumero2"></p>
+<!-- ------------------------------------------------------------------------------------------------------- -->
+
+    <script>
+/* ---------------- AQUI VAI ESTAR PEDINDO OS NUMEROS PARA FAZER A CONTA ETC... ---------------------------- */
+        function calcular() {
+            var numero1 = Number(window.prompt('Digite o primeiro número'))
+            var numero2 = Number(window.prompt('Digite o segundo número'))
+            var operacao = document.getElementById("operacao").value;
+
+            var resultado = 0;
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------- É IGUAL UM ESCOLHA CASO DO VISUALG, aprendi agora rs :D ----------------------*/
+            switch (operacao) {
+                case "soma":
+                    resultado = numero1 + numero2;
+                    break;
+                case "subtracao":
+                    resultado = numero1 - numero2;
+                    break;
+                case "multiplicacao":
+                    resultado = numero1 * numero2;
+                    break;
+                case "divisao":
+                    if (numero2 !== 0) {
+                        resultado = numero1 / numero2;
+                    } else {
+                        document.getElementById("resultado").innerHTML = "Erro: Divisão por zero.";
+                        return;
+                    }
+                    break;
+            }
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* ------------------- AQUI VAO MOSTRAR SE OS NÚMEROS OBTIDOS SÃO IMPARES OU PARES ----------------------- */
+            var resultadoParOuImpar = (resultado % 2 === 0) ? "par" : "ímpar";
+            var tipoNumero1 = (numero1 % 2 === 0) ? "par" : "ímpar";
+            var tipoNumero2 = (numero2 % 2 === 0) ? "par" : "ímpar";
+
+            document.getElementById("resultado").innerHTML = '<span class="black-text"> O resultado da ' + operacao + ' é: <span class="orange-text">' + resultado + '.<span class="black-text"> Este resultado é: <span class="orange-text">' + resultadoParOuImpar + ".";
+            document.getElementById("infoNumero1").innerHTML = '<span class="black-text"> O número: <span class="orange-text">' + numero1 + ' <span class="black-text">é: <span class="orange-text"> ' + tipoNumero1;
+            document.getElementById("infoNumero2").innerHTML = '<span class="black-text"> O número: <span class="orange-text">' + numero2 + ' <span class="black-text">é: <span class="orange-text"> ' + tipoNumero2;
+        }
+
+/* ------------------------------------------------------------------------------------------------------- */
+    </script>
+</body>
+</html>

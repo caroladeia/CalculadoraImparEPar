@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+body{
+    background: url(https://selzy.com/br/blog/wp-content/uploads/2023/04/dicas-gif-email-1200.gif) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Croissant One', cursive;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.fundo{
+    background-color: rgb(162, 222, 255);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    font-size: 50px;
+    color: rgb(0, 90, 138);
+}
+
+button, select{
+    padding: 10px;
+    text-align: center;
+    font-weight: 900;
+    background-color: rgb(36, 148, 188);
+    color: aliceblue;
+    border-radius: 9px;
+}
+
+button:hover, select:hover{
+    background-color: rgb(99, 202, 239);
+    transition: 1s;
+}
+
+select{
+    margin-top: 3%;
+}
+
+button{
+    margin-top: 5%;
+}
+
+.textinho{
+    color: orangered;
+    font-size: 20px;
+}
+
+.orange-text{
+    color: rgb(133, 204, 255);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.black-text{
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
